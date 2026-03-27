@@ -3,7 +3,7 @@ from frappe import _
 
 
 @frappe.whitelist()
-def get_invoice(invoice_number):
+def get_invoice(invoice_number: str):
     """
     GET /api/method/invoice_app.api.get_invoice?invoice_number=INV/W/2603/00001
     """
@@ -21,7 +21,7 @@ def get_invoice(invoice_number):
 
 
 @frappe.whitelist()
-def mark_as_paid(invoice_number, payment_amount):
+def mark_as_paid(invoice_number: str, payment_amount: float):
     """
     POST /api/method/invoice_app.api.mark_as_paid
     Body: { "invoice_number": "INV/W/2603/00001", "payment_amount": 10000 }
@@ -31,8 +31,6 @@ def mark_as_paid(invoice_number, payment_amount):
 
     if not payment_amount:
         frappe.throw(_("Payment amount is required"), frappe.MandatoryError)
-
-    payment_amount = float(payment_amount)
 
     if payment_amount <= 0:
         frappe.throw(_("Payment amount must be greater than 0"))
