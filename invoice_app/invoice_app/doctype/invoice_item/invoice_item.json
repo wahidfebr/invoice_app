@@ -1,0 +1,60 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-03-27 07:53:15.626833",
+ "custom": 1,
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "nama_item",
+  "kuantitas",
+  "rate",
+  "harga"
+ ],
+ "fields": [
+  {
+   "fieldname": "nama_item",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nama Item",
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "kuantitas",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Kuantitas",
+   "reqd": 1
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Rate",
+   "reqd": 1
+  },
+  {
+   "fieldname": "harga",
+   "fieldtype": "Currency",
+   "label": "Harga",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-03-27 07:56:56.928801",
+ "modified_by": "wahidfebr@gmail.com",
+ "module": "Invoice App",
+ "name": "Invoice Item",
+ "owner": "wahidfebr@gmail.com",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

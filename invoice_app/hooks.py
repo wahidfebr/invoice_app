@@ -253,3 +253,12 @@ require_type_annotated_api_methods = True
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 
+
+
+# Document Events
+doc_events = {
+    "Invoice": {
+        "autoname": "invoice_app.invoice_app.doctype.invoice.invoice_events.invoice_autoname",
+        "validate": "invoice_app.invoice_app.doctype.invoice.invoice_events.invoice_validate",
+    }
+}
