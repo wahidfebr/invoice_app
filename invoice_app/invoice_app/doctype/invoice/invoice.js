@@ -1,5 +1,5 @@
 frappe.ui.form.on('Invoice', {
-    tax_percentage: function(frm) {
+    persentase_pajak: function(frm) {
         frm.trigger('calculate_totals');
     },
     calculate_totals: function(frm) {
@@ -8,7 +8,7 @@ frappe.ui.form.on('Invoice', {
 });
 
 frappe.ui.form.on('Invoice Item', {
-    quantity: function(frm, cdt, cdn) {
+    kuantitas: function(frm, cdt, cdn) {
         frm.dirty();
     },
     rate: function(frm, cdt, cdn) {

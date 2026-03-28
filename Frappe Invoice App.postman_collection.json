@@ -1,0 +1,638 @@
+{
+  "info": {
+    "_postman_id": "cbd03894-32a5-42bc-8146-704db1b1be05",
+    "name": "Frappe Invoice App",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "26310647"
+  },
+  "item": [
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"usr\": \"Administrator\",\r\n    \"pwd\": \"admin\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://invoice.localhost:8000/api/method/login",
+          "protocol": "http",
+          "host": [
+            "invoice",
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "method",
+            "login"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Success",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"usr\": \"Administrator\",\r\n    \"pwd\": \"admin\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://invoice.localhost:8000/api/method/login",
+              "protocol": "http",
+              "host": [
+                "invoice",
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "method",
+                "login"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.6 Python/3.14.2"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 27 Mar 2026 23:11:43 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "70"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-store,no-cache,must-revalidate,max-age=0"
+            },
+            {
+              "key": "Set-Cookie",
+              "value": "sid=f718b02f92114828c11db66d7cbb2f5425bf9527a1e2efd64a109d1f; Expires=Sat, 04 Apr 2026 01:11:43 GMT; Max-Age=612000; HttpOnly; Path=/; SameSite=Lax"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Logged In\",\n    \"home_page\": \"desk\",\n    \"full_name\": \"Administrator\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get Invoice",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://invoice.localhost:8000/api/method/invoice_app.api.get_invoice?invoice_number=INV/MLI/2603/00001",
+          "protocol": "http",
+          "host": [
+            "invoice",
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "method",
+            "invoice_app.api.get_invoice"
+          ],
+          "query": [
+            {
+              "key": "invoice_number",
+              "value": "INV/MLI/2603/00001"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Unpaid",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://invoice.localhost:8000/api/method/invoice_app.api.get_invoice?invoice_number=INV/MLI/2603/00001",
+              "protocol": "http",
+              "host": [
+                "invoice",
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "method",
+                "invoice_app.api.get_invoice"
+              ],
+              "query": [
+                {
+                  "key": "invoice_number",
+                  "value": "INV/MLI/2603/00001"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.6 Python/3.14.2"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 27 Mar 2026 23:07:14 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "1576"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-store,no-cache,must-revalidate,max-age=0"
+            },
+            {
+              "key": "Set-Cookie",
+              "value": "sid=dcab91f6e104304e96289807f4ed0a4da61fb9afb82943cba2a9729a; Expires=Sat, 04 Apr 2026 01:07:14 GMT; Max-Age=612000; HttpOnly; Path=/; SameSite=Lax"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": {\n        \"name\": \"INV/MLI/2603/00001\",\n        \"owner\": \"wahidfebr@gmail.com\",\n        \"creation\": \"2026-03-28 06:03:39.758245\",\n        \"modified\": \"2026-03-28 06:03:39.758245\",\n        \"modified_by\": \"wahidfebr@gmail.com\",\n        \"docstatus\": 0,\n        \"idx\": 0,\n        \"customer\": \"C-00002\",\n        \"customer_name\": \"Muat Logistik Indonesia\",\n        \"tanggal_terbit\": \"2026-03-28\",\n        \"total_harga_item\": 67000000,\n        \"persentase_pajak\": 10,\n        \"grand_total\": 73700000,\n        \"outstanding_amount\": 73700000,\n        \"payment_amount\": 0,\n        \"payment_status\": \"Unpaid\",\n        \"doctype\": \"Invoice\",\n        \"items\": [\n            {\n                \"name\": \"vvmam06f8j\",\n                \"owner\": \"wahidfebr@gmail.com\",\n                \"creation\": \"2026-03-28 06:03:39.758245\",\n                \"modified\": \"2026-03-28 06:03:39.758245\",\n                \"modified_by\": \"wahidfebr@gmail.com\",\n                \"docstatus\": 0,\n                \"idx\": 1,\n                \"nama_item\": \"Laptop\",\n                \"kuantitas\": 3,\n                \"rate\": 15000000,\n                \"harga\": 45000000,\n                \"parent\": \"INV/MLI/2603/00001\",\n                \"parentfield\": \"items\",\n                \"parenttype\": \"Invoice\",\n                \"doctype\": \"Invoice Item\"\n            },\n            {\n                \"name\": \"vvm5grr1f8\",\n                \"owner\": \"wahidfebr@gmail.com\",\n                \"creation\": \"2026-03-28 06:03:39.758245\",\n                \"modified\": \"2026-03-28 06:03:39.758245\",\n                \"modified_by\": \"wahidfebr@gmail.com\",\n                \"docstatus\": 0,\n                \"idx\": 2,\n                \"nama_item\": \"Smartphone\",\n                \"kuantitas\": 2,\n                \"rate\": 10000000,\n                \"harga\": 20000000,\n                \"parent\": \"INV/MLI/2603/00001\",\n                \"parentfield\": \"items\",\n                \"parenttype\": \"Invoice\",\n                \"doctype\": \"Invoice Item\"\n            },\n            {\n                \"name\": \"vvmha04480\",\n                \"owner\": \"wahidfebr@gmail.com\",\n                \"creation\": \"2026-03-28 06:03:39.758245\",\n                \"modified\": \"2026-03-28 06:03:39.758245\",\n                \"modified_by\": \"wahidfebr@gmail.com\",\n                \"docstatus\": 0,\n                \"idx\": 3,\n                \"nama_item\": \"Meja\",\n                \"kuantitas\": 10,\n                \"rate\": 200000,\n                \"harga\": 2000000,\n                \"parent\": \"INV/MLI/2603/00001\",\n                \"parentfield\": \"items\",\n                \"parenttype\": \"Invoice\",\n                \"doctype\": \"Invoice Item\"\n            }\n        ]\n    }\n}"
+        },
+        {
+          "name": "Partially Paid",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://invoice.localhost:8000/api/method/invoice_app.api.get_invoice?invoice_number=INV/MLI/2603/00001",
+              "protocol": "http",
+              "host": [
+                "invoice",
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "method",
+                "invoice_app.api.get_invoice"
+              ],
+              "query": [
+                {
+                  "key": "invoice_number",
+                  "value": "INV/MLI/2603/00001"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.6 Python/3.14.2"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 27 Mar 2026 23:08:41 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "1567"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-store,no-cache,must-revalidate,max-age=0"
+            },
+            {
+              "key": "Set-Cookie",
+              "value": "sid=dcab91f6e104304e96289807f4ed0a4da61fb9afb82943cba2a9729a; Expires=Sat, 04 Apr 2026 01:08:41 GMT; Max-Age=612000; HttpOnly; Path=/; SameSite=Lax"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": {\n        \"name\": \"INV/MLI/2603/00001\",\n        \"owner\": \"wahidfebr@gmail.com\",\n        \"creation\": \"2026-03-28 06:03:39.758245\",\n        \"modified\": \"2026-03-28 06:08:22.581834\",\n        \"modified_by\": \"Administrator\",\n        \"docstatus\": 0,\n        \"idx\": 0,\n        \"customer\": \"C-00002\",\n        \"customer_name\": \"Muat Logistik Indonesia\",\n        \"tanggal_terbit\": \"2026-03-28\",\n        \"total_harga_item\": 67000000,\n        \"persentase_pajak\": 10,\n        \"grand_total\": 73700000,\n        \"outstanding_amount\": 43700000,\n        \"payment_amount\": 30000000,\n        \"payment_status\": \"Partially Paid\",\n        \"doctype\": \"Invoice\",\n        \"items\": [\n            {\n                \"name\": \"vvmam06f8j\",\n                \"owner\": \"wahidfebr@gmail.com\",\n                \"creation\": \"2026-03-28 06:03:39.758245\",\n                \"modified\": \"2026-03-28 06:08:22.581834\",\n                \"modified_by\": \"Administrator\",\n                \"docstatus\": 0,\n                \"idx\": 1,\n                \"nama_item\": \"Laptop\",\n                \"kuantitas\": 3,\n                \"rate\": 15000000,\n                \"harga\": 45000000,\n                \"parent\": \"INV/MLI/2603/00001\",\n                \"parentfield\": \"items\",\n                \"parenttype\": \"Invoice\",\n                \"doctype\": \"Invoice Item\"\n            },\n            {\n                \"name\": \"vvm5grr1f8\",\n                \"owner\": \"wahidfebr@gmail.com\",\n                \"creation\": \"2026-03-28 06:03:39.758245\",\n                \"modified\": \"2026-03-28 06:08:22.581834\",\n                \"modified_by\": \"Administrator\",\n                \"docstatus\": 0,\n                \"idx\": 2,\n                \"nama_item\": \"Smartphone\",\n                \"kuantitas\": 2,\n                \"rate\": 10000000,\n                \"harga\": 20000000,\n                \"parent\": \"INV/MLI/2603/00001\",\n                \"parentfield\": \"items\",\n                \"parenttype\": \"Invoice\",\n                \"doctype\": \"Invoice Item\"\n            },\n            {\n                \"name\": \"vvmha04480\",\n                \"owner\": \"wahidfebr@gmail.com\",\n                \"creation\": \"2026-03-28 06:03:39.758245\",\n                \"modified\": \"2026-03-28 06:08:22.581834\",\n                \"modified_by\": \"Administrator\",\n                \"docstatus\": 0,\n                \"idx\": 3,\n                \"nama_item\": \"Meja\",\n                \"kuantitas\": 10,\n                \"rate\": 200000,\n                \"harga\": 2000000,\n                \"parent\": \"INV/MLI/2603/00001\",\n                \"parentfield\": \"items\",\n                \"parenttype\": \"Invoice\",\n                \"doctype\": \"Invoice Item\"\n            }\n        ]\n    }\n}"
+        },
+        {
+          "name": "Paid",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://invoice.localhost:8000/api/method/invoice_app.api.get_invoice?invoice_number=INV/MLI/2603/00001",
+              "protocol": "http",
+              "host": [
+                "invoice",
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "method",
+                "invoice_app.api.get_invoice"
+              ],
+              "query": [
+                {
+                  "key": "invoice_number",
+                  "value": "INV/MLI/2603/00001"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.6 Python/3.14.2"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 27 Mar 2026 23:10:40 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "1550"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-store,no-cache,must-revalidate,max-age=0"
+            },
+            {
+              "key": "Set-Cookie",
+              "value": "sid=dcab91f6e104304e96289807f4ed0a4da61fb9afb82943cba2a9729a; Expires=Sat, 04 Apr 2026 01:10:40 GMT; Max-Age=612000; HttpOnly; Path=/; SameSite=Lax"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": {\n        \"name\": \"INV/MLI/2603/00001\",\n        \"owner\": \"wahidfebr@gmail.com\",\n        \"creation\": \"2026-03-28 06:03:39.758245\",\n        \"modified\": \"2026-03-28 06:10:25.336431\",\n        \"modified_by\": \"Administrator\",\n        \"docstatus\": 0,\n        \"idx\": 0,\n        \"customer\": \"C-00002\",\n        \"customer_name\": \"Muat Logistik Indonesia\",\n        \"tanggal_terbit\": \"2026-03-28\",\n        \"total_harga_item\": 67000000,\n        \"persentase_pajak\": 10,\n        \"grand_total\": 73700000,\n        \"outstanding_amount\": 0,\n        \"payment_amount\": 73700000,\n        \"payment_status\": \"Paid\",\n        \"doctype\": \"Invoice\",\n        \"items\": [\n            {\n                \"name\": \"vvmam06f8j\",\n                \"owner\": \"wahidfebr@gmail.com\",\n                \"creation\": \"2026-03-28 06:03:39.758245\",\n                \"modified\": \"2026-03-28 06:10:25.336431\",\n                \"modified_by\": \"Administrator\",\n                \"docstatus\": 0,\n                \"idx\": 1,\n                \"nama_item\": \"Laptop\",\n                \"kuantitas\": 3,\n                \"rate\": 15000000,\n                \"harga\": 45000000,\n                \"parent\": \"INV/MLI/2603/00001\",\n                \"parentfield\": \"items\",\n                \"parenttype\": \"Invoice\",\n                \"doctype\": \"Invoice Item\"\n            },\n            {\n                \"name\": \"vvm5grr1f8\",\n                \"owner\": \"wahidfebr@gmail.com\",\n                \"creation\": \"2026-03-28 06:03:39.758245\",\n                \"modified\": \"2026-03-28 06:10:25.336431\",\n                \"modified_by\": \"Administrator\",\n                \"docstatus\": 0,\n                \"idx\": 2,\n                \"nama_item\": \"Smartphone\",\n                \"kuantitas\": 2,\n                \"rate\": 10000000,\n                \"harga\": 20000000,\n                \"parent\": \"INV/MLI/2603/00001\",\n                \"parentfield\": \"items\",\n                \"parenttype\": \"Invoice\",\n                \"doctype\": \"Invoice Item\"\n            },\n            {\n                \"name\": \"vvmha04480\",\n                \"owner\": \"wahidfebr@gmail.com\",\n                \"creation\": \"2026-03-28 06:03:39.758245\",\n                \"modified\": \"2026-03-28 06:10:25.336431\",\n                \"modified_by\": \"Administrator\",\n                \"docstatus\": 0,\n                \"idx\": 3,\n                \"nama_item\": \"Meja\",\n                \"kuantitas\": 10,\n                \"rate\": 200000,\n                \"harga\": 2000000,\n                \"parent\": \"INV/MLI/2603/00001\",\n                \"parentfield\": \"items\",\n                \"parenttype\": \"Invoice\",\n                \"doctype\": \"Invoice Item\"\n            }\n        ]\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Mark As Paid",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"invoice_number\": \"INV/MLI/2603/00001\",\r\n    \"payment_amount\": 43700000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://invoice.localhost:8000/api/method/invoice_app.api.mark_as_paid",
+          "protocol": "http",
+          "host": [
+            "invoice",
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "method",
+            "invoice_app.api.mark_as_paid"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Partially Paid",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"invoice_number\": \"INV/MLI/2603/00001\",\r\n    \"payment_amount\": 30000000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://invoice.localhost:8000/api/method/invoice_app.api.mark_as_paid",
+              "protocol": "http",
+              "host": [
+                "invoice",
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "method",
+                "invoice_app.api.mark_as_paid"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "",
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.6 Python/3.14.2"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 27 Mar 2026 23:08:22 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "223"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-store,no-cache,must-revalidate,max-age=0"
+            },
+            {
+              "key": "Set-Cookie",
+              "value": "sid=dcab91f6e104304e96289807f4ed0a4da61fb9afb82943cba2a9729a; Expires=Sat, 04 Apr 2026 01:08:22 GMT; Max-Age=612000; HttpOnly; Path=/; SameSite=Lax"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "domain": "",
+              "path": ""
+            }
+          ],
+          "body": "{\n    \"message\": {\n        \"message\": \"Payment recorded successfully\",\n        \"invoice_number\": \"INV/MLI/2603/00001\",\n        \"payment_amount_received\": 30000000,\n        \"total_payment\": 30000000,\n        \"outstanding_amount\": 43700000,\n        \"payment_status\": \"Partially Paid\"\n    }\n}"
+        },
+        {
+          "name": "Paid",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"invoice_number\": \"INV/MLI/2603/00001\",\r\n    \"payment_amount\": 43700000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://invoice.localhost:8000/api/method/invoice_app.api.mark_as_paid",
+              "protocol": "http",
+              "host": [
+                "invoice",
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "method",
+                "invoice_app.api.mark_as_paid"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "",
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.6 Python/3.14.2"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 27 Mar 2026 23:10:25 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "206"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-store,no-cache,must-revalidate,max-age=0"
+            },
+            {
+              "key": "Set-Cookie",
+              "value": "sid=dcab91f6e104304e96289807f4ed0a4da61fb9afb82943cba2a9729a; Expires=Sat, 04 Apr 2026 01:10:25 GMT; Max-Age=612000; HttpOnly; Path=/; SameSite=Lax"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "domain": "",
+              "path": ""
+            }
+          ],
+          "body": "{\n    \"message\": {\n        \"message\": \"Payment recorded successfully\",\n        \"invoice_number\": \"INV/MLI/2603/00001\",\n        \"payment_amount_received\": 43700000,\n        \"total_payment\": 73700000,\n        \"outstanding_amount\": 0,\n        \"payment_status\": \"Paid\"\n    }\n}"
+        },
+        {
+          "name": "Error: Paid A Fully Paid Invoice",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"invoice_number\": \"INV/MLI/2603/00001\",\r\n    \"payment_amount\": 43700000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://invoice.localhost:8000/api/method/invoice_app.api.mark_as_paid",
+              "protocol": "http",
+              "host": [
+                "invoice",
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "method",
+                "invoice_app.api.mark_as_paid"
+              ]
+            }
+          },
+          "status": "EXPECTATION FAILED",
+          "code": 417,
+          "_postman_previewlanguage": "",
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.6 Python/3.14.2"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 27 Mar 2026 23:11:00 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "2214"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-store,no-cache,must-revalidate,max-age=0"
+            },
+            {
+              "key": "Set-Cookie",
+              "value": "sid=dcab91f6e104304e96289807f4ed0a4da61fb9afb82943cba2a9729a; Expires=Sat, 04 Apr 2026 01:11:00 GMT; Max-Age=612000; HttpOnly; Path=/; SameSite=Lax"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "domain": "",
+              "path": ""
+            }
+          ],
+          "body": "{\n    \"exception\": \"frappe.exceptions.ValidationError: Invoice INV/MLI/2603/00001 is already fully paid\",\n    \"exc_type\": \"ValidationError\",\n    \"_exc_source\": \"invoice_app (app)\",\n    \"exc\": \"[\\\"Traceback (most recent call last):\\\\n  File \\\\\\\"apps/frappe/frappe/app.py\\\\\\\", line 121, in application\\\\n    response = frappe.api.handle(request)\\\\n  File \\\\\\\"apps/frappe/frappe/api/__init__.py\\\\\\\", line 63, in handle\\\\n    data = endpoint(**arguments)\\\\n  File \\\\\\\"apps/frappe/frappe/api/v1.py\\\\\\\", line 40, in handle_rpc_call\\\\n    return frappe.handler.handle()\\\\n           ~~~~~~~~~~~~~~~~~~~~~^^\\\\n  File \\\\\\\"apps/frappe/frappe/handler.py\\\\\\\", line 54, in handle\\\\n    data = execute_cmd(cmd)\\\\n  File \\\\\\\"apps/frappe/frappe/handler.py\\\\\\\", line 87, in execute_cmd\\\\n    return frappe.call(method, **frappe.form_dict)\\\\n           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \\\\\\\"apps/frappe/frappe/__init__.py\\\\\\\", line 1131, in call\\\\n    return fn(*args, **newargs)\\\\n  File \\\\\\\"apps/frappe/frappe/utils/typing_validations.py\\\\\\\", line 49, in wrapper\\\\n    return func(*args, **kwargs)\\\\n  File \\\\\\\"apps/invoice_app/invoice_app/api.py\\\\\\\", line 47, in mark_as_paid\\\\n    frappe.throw(_(\\\\\\\"Invoice {0} is already fully paid\\\\\\\").format(invoice_number))\\\\n    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \\\\\\\"apps/frappe/frappe/utils/messages.py\\\\\\\", line 159, in throw\\\\n    msgprint(\\\\n    ~~~~~~~~^\\\\n    \\\\tmsg,\\\\n     ^^^^\\\\n    ...<7 lines>...\\\\n    \\\\tallow_dangerous_html=allow_dangerous_html,\\\\n     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n    )\\\\n    ^\\\\n  File \\\\\\\"apps/frappe/frappe/utils/messages.py\\\\\\\", line 118, in msgprint\\\\n    _raise_exception()\\\\n    ~~~~~~~~~~~~~~~~^^\\\\n  File \\\\\\\"apps/frappe/frappe/utils/messages.py\\\\\\\", line 59, in _raise_exception\\\\n    raise exc\\\\nfrappe.exceptions.ValidationError: Invoice INV/MLI/2603/00001 is already fully paid\\\\n\\\"]\",\n    \"_server_messages\": \"[\\\"{\\\\\\\"message\\\\\\\":\\\\\\\"Invoice INV/MLI/2603/00001 is already fully paid\\\\\\\",\\\\\\\"as_table\\\\\\\":false,\\\\\\\"title\\\\\\\":\\\\\\\"Message\\\\\\\",\\\\\\\"indicator\\\\\\\":\\\\\\\"red\\\\\\\",\\\\\\\"raise_exception\\\\\\\":1,\\\\\\\"__frappe_exc_id\\\\\\\":\\\\\\\"14a44c3491078cdd3804c0a4ced53e1f1e998051ce8d653a550a04fd\\\\\\\"}\\\"]\"\n}"
+        },
+        {
+          "name": "Edge Case: Paid More Than Grand Total",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"invoice_number\": \"INV/W/2603/00002\",\r\n    \"payment_amount\": 50000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://invoice.localhost:8000/api/method/invoice_app.api.mark_as_paid",
+              "protocol": "http",
+              "host": [
+                "invoice",
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "method",
+                "invoice_app.api.mark_as_paid"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "",
+          "header": [
+            {
+              "key": "Server",
+              "value": "Werkzeug/3.1.6 Python/3.14.2"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 27 Mar 2026 23:30:06 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "203"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-store,no-cache,must-revalidate,max-age=0"
+            },
+            {
+              "key": "Set-Cookie",
+              "value": "sid=f718b02f92114828c11db66d7cbb2f5425bf9527a1e2efd64a109d1f; Expires=Sat, 04 Apr 2026 01:30:06 GMT; Max-Age=612000; HttpOnly; Path=/; SameSite=Lax"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "domain": "",
+              "path": ""
+            }
+          ],
+          "body": "{\n    \"message\": {\n        \"message\": \"Payment recorded successfully\",\n        \"invoice_number\": \"INV/W/2603/00002\",\n        \"payment_amount_received\": 50000,\n        \"total_payment\": 50000,\n        \"outstanding_amount\": -40000,\n        \"payment_status\": \"Paid\"\n    }\n}"
+        }
+      ]
+    }
+  ]
+}
